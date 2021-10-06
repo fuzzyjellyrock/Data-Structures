@@ -1,9 +1,6 @@
 # Single-Linked-List
 An implementation for a Single Linked List data structure in Python.
 
-Author: Luis Miguel Sanchez Pinilla
+Author: Luis Miguel Sanchez Pinilla\nDate: October 5, 2021
 
-Date: October 5, 2021
-
-Estructura de Datos 2021-3
-Universidad Autonoma de Manizales
+Estructura de Datos 2021-3\nUniversidad Autonoma de Manizales
