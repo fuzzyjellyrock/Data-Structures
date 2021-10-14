@@ -39,7 +39,7 @@ class DoubleLinkedList:
       self.tail.next = self._Node(value)
       self.tail.next.prev = self.tail
       self.tail = self.tail.next
-    self.length += 1
+      self.length += 1
 
   def insert(self, index: int,value) -> None:
     if index > -1 and index <= self.length:
@@ -183,9 +183,14 @@ class DoubleLinkedList:
     self.tail = head
 
   def sort(self) -> None:
-    trav = self.head
+    trav = self.head.next
     while trav != None:
+      key = trav.data
       prev = trav.prev
-      trav.prev = trav.next
-      trav.next = prev
-      trav = trav.prev
+      temp = trav
+      while prev != None and key < prev.data:
+        prev.next.data = prev.data
+        temp = prev
+        prev = prev.prev
+      temp.data = key
+      trav = trav.next

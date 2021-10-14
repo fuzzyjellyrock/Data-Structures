@@ -8,36 +8,48 @@ class TestClass:
     self.abcs = False
 
   def fill_list_ints(self) -> None:
+    if self.abcs == True:
+      self.dll.clear()
+      self.abcs = False
     num = self.ask_int_data("Number of nodes to add", " >>>> ")
     for i in range(num):
-      data = self.ask_int_data("Node "+i+" value", " >>>> ")
+      data = self.ask_int_data("Node value", " >>>> ")
       self.dll.add(data)
     self.nums = True
+    self.dll.print()
 
   def fill_list_abcs(self) -> None:
+    if self.nums == True:
+      self.dll.clear()
+      self.nums = False
     num = self.ask_int_data("Number of nodes to add", " >>>> ")
     for i in range(num):
-      data = input("Node "+i+" value"+" >>>> ")
+      data = input("Node value"+" >>>> ")
       self.dll.add(data)
     self.abcs = True
+    self.dll.print()
 
   def square_it_up(self) -> None:
-    for node in self.dll:
-      node.data = pow(node.data, 2)
+    for i in range(self.dll.length):
+      value = self.dll.get(i)
+      self.dll.set(i, pow(value,2))
+    print("\n|||||||| squared elements list ||||||||")
+    self.dll.print()
+    self.dll.invert()
+    print("\n|||||||| inverse of squared elements list ||||||||")
+    self.dll.print()
 
   def greatest_value_node(self) -> int:
     grtst = -math.inf
     index = -1
-    n = 0
-    for node in self.dll:
-      if node.data > grtst:
-        grtst = node.data
-        index = n
-      n += 1
+    for i in range(self.dll.length):
+      value = self.dll.get(i)
+      if value > grtst:
+        grtst = value
+        index = i
     return index
 
   def remove_greatest_value(self):
-    self.dll.print()
     index = self.greatest_value_node()
     self.dll.pop(index)
     self.dll.print()

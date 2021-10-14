@@ -1,23 +1,21 @@
-from double_linked_list import DoubleLinkedList
+from test import TestClass
 
 if __name__ == "__main__":
-  list = DoubleLinkedList()
-  
-  print("Adding nodes...")
-  list.add_first(7)
-  list.add_first(1)
-  list.add(3)
-  list.add(5)
-  list.add(9)
-  list.print()
+  test = TestClass()
 
-  print("Deleting index 3...")
-  list.pop(3)
-  list.print()
+  print("Create List with numbers")
+  print("\n||||||||| Fill list |||||||||")
+  test.fill_list_ints()
+  print("\n||||||||| Sort list |||||||||")
+  test.dll.sort()
+  test.dll.print()
+  test.square_it_up()
+  print("\n|||||||| Remove greatest value ||||||||")
+  test.remove_greatest_value()
 
-  print("Inverting list...")
-  list.invert()
-  list.print()
-  
-  print("List length: ", end = "")
-  print(list.length)
+  print("\nCreate List with letters")
+  print("\n||||||||| Fill list |||||||||")
+  test.fill_list_abcs()
+  print("\n||||||||| Sort list |||||||||")
+  test.dll.sort()
+  test.dll.print()
