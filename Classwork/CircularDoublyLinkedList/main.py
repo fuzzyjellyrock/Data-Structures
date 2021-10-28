@@ -1,0 +1,30 @@
+from circular_doubly_linked_list import CircularDoublyLinkedList
+if __name__ == "__main__":
+    l = CircularDoublyLinkedList()
+    l.add('a')
+    l.add('b')
+    l.add_first('c')
+    l.add('d')
+    l.insert(2,'e')
+    l.print()
+    l.print_inverse()
+    node = l.get_node(0)
+    print("[",l.length-1,"]: "+node.prev.data)
+    node = l.get_node(l.length-1)
+    print("[0]: "+node.next.data)
+    l.pop(4)
+    l.pop(3)
+    l.pop(2)
+    l.pop(1)
+    l.print()
+    l.print_inverse()
+    node = l.get_node(0)
+    print("[",l.length-1,"]: "+node.prev.data)
+    node = l.get_node(l.length-1)
+    print("[0]: "+node.next.data)
+    """
+    n = 3
+    print("[",n,"] = "+l.get(n))
+    """
+    l.invert()
+    l.print()
