@@ -2,24 +2,22 @@ from BinaryTree import BinaryTree
 
 if __name__ == "__main__":
     t = BinaryTree(True)
-    t.add(50)
-    t.add(30)
-    t.add(20)
-    t.add(40)
-    t.add(41)
-    t.add(32)
-    t.add(34)
-    t.add(36)
-    t.add(70)
-    t.add(60)
-    t.add(65)
-    t.add(80)
-    t.add(75)
-    t.add(85)
+    t.add(3)
+    t.add(1)
+    t.add(7)
+    t.add(2)
+    t.add(6)
+    t.add(5)
+    t.add(4)
+    t.add(9)
+    t.add(8)
 
     print("Tree size: ",t.size)
-    t.inorder(t.root)
+    t.postorder(t.root)
+    print("\n")
+    t.preorder(t.root)
 
+    """
     #print(t.remove(70))
     #print(t.remove(30))
     print(t.remove(50))
@@ -28,3 +26,4 @@ if __name__ == "__main__":
     print("Tree size: ",t.size)
     print("root from main: ", t.root.data)
     t.inorder(t.root)
+    """
